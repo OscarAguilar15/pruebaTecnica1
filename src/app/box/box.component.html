@@ -1,1 +1,15 @@
-<p>box works!</p>
+<h2>Encuentra Múltiplos</h2>
+<div>
+  <label for="userNumber">Ingresa un número:</label>
+  <input type="number" id="userNumber" [(ngModel)]="userInput" />
+  <button (click)="findMultiples()">Buscar</button>
+</div>
+
+<ul>
+  <li *ngFor="let multiplo of multiplos">
+    {{ multiplo.numero }}
+    <span *ngIf="multiplo.multiplos3.length > 0" [style.color]="'green'"> (Múltiplo de 3) </span>
+    <span *ngIf="multiplo.multiplos5.length > 0" [style.color]="'red'"> (Múltiplo de 5) </span>
+    <span *ngIf="multiplo.multiplos7.length > 0" [style.color]="'blue'"> (Múltiplo de 7) </span>
+  </li>
+</ul>
